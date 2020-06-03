@@ -12,6 +12,8 @@
 	}
 
 	const messages = [
+		newMessage('02/06/2020', 'bleah.<br>mă piș pe ele chipsuri.'),
+		newMessage('31/05/2020', 'ba chiar am cumparat chipsuri<br>2 feluri<br>sa bag?'),
 		newMessage('31/05/2020', 'ba chiar am cumparat chipsuri<br>2 feluri<br>sa bag?'),
 		newMessage('29/05/2020', 'ieri am mâncat chipsuri de foame.'),
 		newMessage('28/05/2020', 'trag pula-n chipsuri.<br>drăcie satanică.'),
