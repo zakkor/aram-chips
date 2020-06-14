@@ -6,12 +6,35 @@
 
 	function newMessage(date, content) {
 		return {
+			type: 'textMessage',
 			date,
 			content,
 		}
 	}
 
-	const messages = [
+	function newVideo(date, url) {
+		return {
+			type: 'videoMessage',
+			date,
+			url,
+		}
+	}
+
+	function newUnreadMarker() {
+		return {
+			type: 'unreadMarker',
+		}
+	}
+
+	const entries = [
+		newMessage(
+			'15/06/2020',
+			'otrava diavolească roade sufletul.<br>baga-mi-as pula in ele chipsuri.'
+		),
+		newVideo('13/06/2020', '/videos/supermarket.mp4'),
+		newMessage('13/06/2020', 'bune-s chipsurile<br>si berea<br>be-re-a'),
+		newMessage('11/06/2020', 'să mă fut în ele chipsuri.'),
+		newUnreadMarker(),
 		newMessage('02/06/2020', 'bleah.<br>mă piș pe ele chipsuri.'),
 		newMessage('31/05/2020', 'ba chiar am cumparat chipsuri<br>2 feluri<br>sa bag?'),
 		newMessage('31/05/2020', 'ba chiar am cumparat chipsuri<br>2 feluri<br>sa bag?'),
@@ -53,6 +76,11 @@
 			transform: scale(2) translate(0, 25%);
 		}
 	}
+	.unread-line {
+		@apply absolute w-full border-b border-red-500;
+		margin-top: 11px;
+		z-index: -1;
+	}
 </style>
 
 <svelte:head>
@@ -61,10 +89,26 @@
 
 <div class="latest-container">
 	<div class="latest-status space-y-2">
-		{#each messages as message}
-			<DiscordMessage {imageSrc} {nickname} date={message.date}>
-				{@html message.content}
-			</DiscordMessage>
+		{#each entries as entry}
+			{#if entry.type === 'unreadMarker'}
+				<div class="flex relative">
+					<div class="unread-line" />
+					<span
+						class="mx-auto inline-block uppercase text-white bg-red-500 px-2 pt-1 rounded-lg
+						font-semibold text-xs"
+					>
+						new
+					</span>
+				</div>
+			{:else}
+				<DiscordMessage {imageSrc} {nickname} date={entry.date}>
+					{#if entry.type === 'textMessage'}
+						{@html entry.content}
+					{:else if entry.type === 'videoMessage'}
+						<video class="mt-2 w-64" controls src={entry.url} />
+					{/if}
+				</DiscordMessage>
+			{/if}
 		{/each}
 	</div>
 </div>

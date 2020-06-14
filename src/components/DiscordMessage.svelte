@@ -25,9 +25,6 @@
 		font-size: 0.875em;
 		vertical-align: baseline;
 	}
-	.text-message {
-		font-size: 1em;
-	}
 	.profile-pic {
 		@apply rounded-full;
 		width: 40px;
@@ -44,8 +41,7 @@
 			<span class="text-nickname">{nickname}</span>
 			<span class="text-date">{date}</span>
 		</div>
-		<span class="text-message">
-			<slot />
-		</span>
+
+		<slot />
 	</div>
 </div>
