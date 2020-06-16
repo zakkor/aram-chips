@@ -27,8 +27,12 @@
 	}
 
 	const entries = [
-		newMessage('17/06/2020', 'eu acuma mananc chipsuri<br>chipsuri cu bere<br>ce bune sunt'),
+		newMessage(
+			'17/06/2020',
+			'am mancat chipsuri de nervi.<br>bleah<br>ce rele au fost, sa-mi bag pula.<br>le urasc.'
+		),
 		newUnreadMarker(),
+		newMessage('17/06/2020', 'eu acuma mananc chipsuri<br>chipsuri cu bere<br>ce bune sunt'),
 		newMessage(
 			'15/06/2020',
 			'otrava diavolească roade sufletul.<br>baga-mi-as pula in ele chipsuri.'
