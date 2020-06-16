@@ -27,6 +27,8 @@
 	}
 
 	const entries = [
+		newMessage('17/06/2020', 'eu acuma mananc chipsuri<br>chipsuri cu bere<br>ce bune sunt'),
+		newUnreadMarker(),
 		newMessage(
 			'15/06/2020',
 			'otrava diavolească roade sufletul.<br>baga-mi-as pula in ele chipsuri.'
@@ -34,7 +36,6 @@
 		newVideo('13/06/2020', '/videos/supermarket.mp4'),
 		newMessage('13/06/2020', 'bune-s chipsurile<br>si berea<br>be-re-a'),
 		newMessage('11/06/2020', 'să mă fut în ele chipsuri.'),
-		newUnreadMarker(),
 		newMessage('02/06/2020', 'bleah.<br>mă piș pe ele chipsuri.'),
 		newMessage('31/05/2020', 'ba chiar am cumparat chipsuri<br>2 feluri<br>sa bag?'),
 		newMessage('31/05/2020', 'ba chiar am cumparat chipsuri<br>2 feluri<br>sa bag?'),
